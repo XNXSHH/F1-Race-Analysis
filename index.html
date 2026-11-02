@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>F1 | Race Analysis</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #101010;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #111111;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #e10600;
+}
+
+nav a {
+    color: #cccccc;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #e10600;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 490px;
+    padding: 110px 8%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, #101010 15%, rgba(16,16,16,0.85) 65%, rgba(16,16,16,0.5)),
+    url('https://images.unsplash.com/photo-1532906619279-a4b7267faa66?w=1800');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid #e10600;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tag {
+    color: #e10600;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: #e10600;
+}
+
+.hero p {
+    color: #bbbbbb;
+    margin-top: 22px;
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 540px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 28px;
+    background: #e10600;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: #e10600;
+}
+
+/* INTRO */
+
+.intro {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #999999;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* VISUALIZATION SECTIONS */
+
+.visual-section {
+    padding: 55px 8%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading .number {
+    color: #e10600;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+    text-transform: uppercase;
+}
+
+.section-heading p {
+    color: #888888;
+    font-size: 12px;
+    margin-top: 6px;
+    letter-spacing: 2px;
+}
+
+.tableau-box {
+    background: #1b1b1b;
+    padding: 12px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+}
+
+iframe {
+    width: 100%;
+    height: 780px;
+    border: none;
+    display: block;
+    background: #ffffff;
+}
+
+/* DIVIDER */
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e10600, transparent);
+    margin: 20px 8%;
+}
+
+/* FOOTER */
+
+footer {
+    background: #090909;
+    padding: 40px 8%;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+
+footer h2 {
+    font-size: 23px;
+    letter-spacing: 3px;
+}
+
+footer h2 span {
+    color: #e10600;
+}
+
+footer p {
+    color: #777777;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 80px 7%;
+    }
+
+    .visual-section {
+        padding: 35px 5%;
+    }
+
+    iframe {
+        height: 600px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">F1<span>.</span> ANALYSIS</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#story">Story</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="tag">MOTORSPORT • DATA • PERFORMANCE</div>
+
+        <h1>
+            BEYOND<br>
+            THE <span>FINISH</span><br>
+            LINE.
+        </h1>
+
+        <p>
+            Explore the world of Formula 1 through data.
+            Discover racing patterns, analyze performance
+            and uncover insights behind every race.
+        </p>
+
+        <a href="#dashboard" class="hero-btn">
+            EXPLORE THE ANALYSIS →
+        </a>
+
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+    <h2>THE WORLD OF FORMULA 1</h2>
+
+    <p>
+        A data-driven exploration of Formula 1 racing.
+        This project presents interactive visualizations
+        and analytical storytelling to understand the
+        dynamics of motorsport performance.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- DASHBOARD -->
+
+<section class="visual-section" id="dashboard">
+
+    <div class="section-heading">
+        <div class="number">01</div>
+
+        <div>
+            <h2>Race Analysis Dashboard</h2>
+            <p>EXPLORE THE DATA • DISCOVER THE PATTERNS</p>
+        </div>
+    </div>
+
+    <div class="tableau-box">
+        <iframe
+        src="https://public.tableau.com/views/F1RaceanalysisWorkbook/Dashboard1?:showVizHome=no&:embed=true"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+
+<section class="visual-section" id="story">
+
+    <div class="section-heading">
+        <div class="number">02</div>
+
+        <div>
+            <h2>The Racing Story</h2>
+            <p>FROM DATA TO INSIGHTS • VISUAL STORYTELLING</p>
+        </div>
+    </div>
+
+    <div class="tableau-box">
+        <iframe
+        src="https://public.tableau.com/views/F1RaceanalysisWorkbook/Story1?:showVizHome=no&:embed=true"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>F1<span>.</span> RACE ANALYSIS</h2>
+
+    <p>Designed & Developed by Anash Shah</p>
+    <p>Formula 1 | Data Visualization Project</p>
+</footer>
+
+</body>
+</html>
